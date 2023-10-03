@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 30px;
+        }
+    </style>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Задачи</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="reg.html">Регистрация</a></li>
+            <li><a href="tasks.html">Задачи</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="ani.html">Анимация</a></li>
+            <li><a href="model.html">Модель</a></li>
+            <li><a href="video.html">Видеоуроки</a></li>
+            <li><a href="lit.html">Литература</a></li>
+            <li><a href="form.html">Форма обратной связи</a></li>
+            <li><a href="author.html">Об авторе</a></li>
+        </ul>
+    </nav>
+  
+<body>
+    <main>
+    <h2>Задача 1</h2>
+    <p>Какова масса тела при объеме 2 литра и плотности 1000 кг/м³?</p>
+    <input type="text" id="answer1">
+    <button onclick="checkAnswer(1)">Проверить</button>
+    <div id="result1" class="result"></div>
+
+    <h2>Задача 2</h2>
+    <p>Если плотность жидкости, в которую погружено тело, 800 кг/м³, а объем тела, погруженного в жидкость, 5 литров, то какова масса этого тела?</p>
+    <input type="text" id="answer2">
+    <button onclick="checkAnswer(2)">Проверить</button>
+    <div id="result2" class="result"></div>
+
+    <h2>Задача 3</h2>
+    <p>При измерении массы тела методом гидростатического взвешивания получена показательная плотность 0,9. Какова масса тела?</p>
+    <input type="text" id="answer3">
+    <button onclick="checkAnswer(3)">Проверить</button>
+    <div id="result3" class="result"></div>
+
+    <script>
+        function checkAnswer(taskNumber) {
+            var answer = document.getElementById("answer" + taskNumber).value;
+            var result = document.getElementById("result" + taskNumber);
+
+            switch (taskNumber) {
+                case 1:
+                    if (answer === "2000") {
+                        result.innerText = "Верно!";
+                    } else {
+                        result.innerText = "Неверно!";
+                    }
+                    break;
+                case 2:
+                    if (answer === "4000") {
+                        result.innerText = "Верно!";
+                    } else {
+                        result.innerText = "Неверно!";
+                    }
+                    break;
+                case 3:
+                    if (answer === "0.9") {
+                        result.innerText = "Верно!";
+                    } else {
+                        result.innerText = "Неверно!";
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

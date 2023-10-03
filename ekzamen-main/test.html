@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 30px;
+        }
+    </style>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Тест</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="reg.html">Регистрация</a></li>
+            <li><a href="tasks.html">Задачи</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="ani.html">Анимация</a></li>
+            <li><a href="model.html">Модель</a></li>
+            <li><a href="video.html">Видеоуроки</a></li>
+            <li><a href="lit.html">Литература</a></li>
+            <li><a href="form.html">Форма обратной связи</a></li>
+            <li><a href="author.html">Об авторе</a></li>
+        </ul>
+    </nav>
+<main>
+    <form id="quizForm">
+        <label>
+             <h3>Вопрос 1: Что представляет собой метод гидростатического взвешивания?</h3>
+            <input type="radio" name="q1" value="1"> а) Измерение массы тела путем погружения его в воду
+            <br>
+            <input type="radio" name="q1" value="0"> б) Измерение массы тела при помощи специальных весов
+            <br>
+            <input type="radio" name="q1" value="0"> в) Измерение массы тела по его объему
+            <br>
+            <input type="radio" name="q1" value="0"> г) Измерение массы тела при помощи лазерной визуализации
+         </label>
+         <label>
+            <h3>Вопрос 2: Какие данные требуются для проведения гидростатического взвешивания?</h3>
+            <input type="radio" name="q2" value="0"> а) Вес тела и его плотность
+            <br>
+            <input type="radio" name="q2" value="0"> б) Объем тела и его плотность
+            <br>
+            <input type="radio" name="q2" value="0"> в) Объем и масса воды, использованной при погружении тела
+            <br>
+            <input type="radio" name="q2" value="1"> г) Масса тела и его плотность
+         </label>
+         <label>
+            <h3>Вопрос 3: Как рассчитывается масса тела при гидростатическом взвешивании?</h3>
+            <input type="radio" name="q3" value="0"> а) Путем деления объема тела на его плотность
+            <br>
+            <input type="radio" name="q3" value="0"> б) Путем вычитания массы воды из общей массы
+            <br>
+            <input type="radio" name="q3" value="1"> в) Путем умножения плотности воды на ее объем и вычитания этого значения из общей массы
+            <br>
+            <input type="radio" name="q3" value="0"> г) Путем вычитания массы тела из массы воды
+         </label>
+         <label>
+            <h3>Вопрос 4: Какие факторы могут повлиять на точность гидростатического взвешивания?</h3>
+            <input type="radio" name="q4" value="0"> а) Температура воды и давление
+            <br>
+            <input type="radio" name="q4" value="0"> б) Размеры и форма тела
+            <br>
+            <input type="radio" name="q4" value="0"> в) Равномерность погружения тела в воду
+            <br>
+            <input type="radio" name="q4" value="1"> г) Все вышеперечисленные факторы
+         </label>
+         <label>
+            <h3>Вопрос 5: Каким образом можно увеличить точность гидростатического взвешивания?</h3>
+            <input type="checkbox" name="q5" value="1"> а) Использовать жидкость с более высокой плотностью
+            <br>
+            <input type="checkbox" name="q5" value="1"> б) Увеличить объем погруженного тела
+            <br>
+            <input type="checkbox" name="q5" value="1"> в) Использовать более точные измерительные приборы
+            <br>
+            <input type="checkbox" name="q5" value="0"> г) Изменить форму тела
+         </label>  
+        
+        <button type="button" onclick="submitQuiz()"><h3>Завершить тест</h3></button>
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Результаты</h2>
+        <p>Правильных ответов: <span id="score"></span></p>
+    </div>
+</main>
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById("quizForm");
+            const elements = form.elements;
+            let score = 0;
+
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].type === "radio" && elements[i].checked) {
+                    score += parseInt(elements[i].value);
+                }
+            }
+            for (let i = 0; i < elements.length; i++) {
+                if (elements[i].type === "checkbox" && elements[i].checked) {
+                    score += parseInt(elements[i].value);
+                }
+            }
+
+            const resultDiv = document.getElementById("result");
+            const scoreSpan = document.getElementById("score");
+            scoreSpan.textContent = score;
+            resultDiv.style.display = "block";
+            window.scrollTo(0,document.body.scrollHeight);
+        }
+    </script>
+</body>
+</html>

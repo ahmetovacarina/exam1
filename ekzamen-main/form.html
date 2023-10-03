@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Форма обратной связи</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="reg.html">Регистрация</a></li>
+            <li><a href="tasks.html">Задачи</a></li>
+            <li><a href="test.html">Тест</a></li>
+            <li><a href="ani.html">Анимация</a></li>
+            <li><a href="model.html">Модель</a></li>
+            <li><a href="video.html">Видеоуроки</a></li>
+            <li><a href="lit.html">Литература</a></li>
+            <li><a href="form.html">Форма обратной связи</a></li>
+            <li><a href="author.html">Об авторе</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="feedback">
+            <h2>Форма обратной связи</h2>
+            <form id="feedback-form" action="mailto:a.k.r.1999@mail.ru" method="post" enctype="text/plain">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Сообщение:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" value="Отправить">
+            </form>
+            <p id="feedback-info"></p>
+        </section>
+
+</main>
+</body>
+</html>
